@@ -44,6 +44,4 @@ class App extends Component {
 export default App;
 
 
-git branch -M main
-git remote add origin git@github.com:Albertobar94/Monsters-rolodex.git
-git push -u origin main
+
