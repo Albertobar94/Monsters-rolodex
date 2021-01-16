@@ -2,11 +2,13 @@ import React from 'react';
 import './card-list.style.css';
 import { Card } from './card/card.component';
 
-export const CardList = props => {
+export const CardList = ({ dataMonsters }) => {
+    const { monsters, searchField } = dataMonsters;
+    const filteredMonsters = monsters.filter( monster =>  monster.name.toLowerCase().includes(searchField.toLowerCase()))
     return (
         <div className="card-list">
-        { props.monsters.map( monster =>  (
-            <Card key={ monster.id } monster={monster} />
+        { filteredMonsters.map( monster =>  (
+            <Card key={ monster.id } monster={ monster } />
         ))}
         </div>
     )
